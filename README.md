@@ -6,3 +6,10 @@ git clone https://github.com/oemergenc/dc-kafka.git
 cd dc-kafka
 docker-compose up
 ```
+## Test with kafka-cli
+Make sure you have kafka-cli installed. After starting the docker-compose setup, simply run the following cmd
+to list all available topic. By default only the topic `testopic` is created.
+```
+kafka-topics --zookeeper 127.0.0.1:2181 --list
+testtopic
+```
