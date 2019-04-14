@@ -6,6 +6,16 @@ git clone https://github.com/oemergenc/dc-kafka.git
 cd dc-kafka
 docker-compose up
 ```
+## Test with kafkacat
+After starting the docker setup you can run the following command to check if the kafka 
+broker is reachable from your host machine
+```
+docker run --tty \
+           --network dc-kafka_default \
+           confluentinc/cp-kafkacat \
+           kafkacat -b kafka:9093 \
+                    -L
+```
 ## Test with kafka-cli
 Make sure you have kafka-cli installed. After starting the docker-compose setup, simply run the following cmd
 to list all available topics. By default only the topic `testopic` is created.
